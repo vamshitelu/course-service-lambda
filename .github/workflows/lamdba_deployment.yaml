@@ -29,10 +29,10 @@ jobs:
       - name: update lambda function
         run: |
           aws lambda update-function-code --function-name course-function --zip-file fileb://target/course-service-1.0-SNAPSHOT-lambda-package.zip
-      - name: Update API Gateway with OpenAPI definition
-        run: |
-          aws apigateway put-rest-api --rest-api-id ${{ secrets.API_GATEWAY_ID }} --body "$(cat openapi.json | base64 --wrap=0)"
-      - name: Deploy API Gate
-        run: |
-          aws apigateway create-deployment --rest-api-id ${{ secrets.API_GATEWAY_ID }}
+   #   - name: Update API Gateway with OpenAPI definition
+   #     run: |
+   #       aws apigateway put-rest-api --rest-api-id ${{ secrets.API_GATEWAY_ID }} --body "$(cat openapi.json | base64 --wrap=0)"
+   #   - name: Deploy API Gate
+   #     run: |
+   #       aws apigateway create-deployment --rest-api-id ${{ secrets.API_GATEWAY_ID }}
             
